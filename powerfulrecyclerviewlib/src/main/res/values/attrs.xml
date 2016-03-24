@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PowerfulRecyclerView">
+
+        <attr name="refresh_distance" format="dimension"/>
+        <attr name="max_to_pull" format="dimension"/>
+        <attr name="back_top_duration" format="integer"/>
+        <attr name="position_to_show" format="integer"/>
+        <attr name="NoDataView" format="reference"/>
+        <attr name="isSwipeToRefresh" format="boolean"/>
+    </declare-styleable>
+</resources>

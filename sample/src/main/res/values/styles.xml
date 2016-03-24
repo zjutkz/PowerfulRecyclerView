@@ -17,4 +17,37 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="bj_list_item_title">
+        <item name="android:textColor">#454545</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="bj_list_item_cur_price">
+        <item name="android:textColor">#f02832</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="bj_list_item_orig_price">
+        <item name="android:textColor">#999999</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="bj_list_item_tag">
+        <item name="android:textColor">#999999</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="bj_split_line">
+        <item name="android:background">#dfdfdf</item>
+    </style>
+
+    <style name="bj_split_line_h" parent="bj_split_line">
+        <item name="android:minHeight">1px</item>
+    </style>
+
+    <style name="bj_content_light">
+        <item name="android:textColor">#999999</item>
+    </style>
+
 </resources>

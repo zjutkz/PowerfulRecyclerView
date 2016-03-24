@@ -1,34 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.kangzhe.sample.MainActivity">
+    tools:context=".activity.MainActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="wrap_content"
+            android:text="list"/>
 
-    </android.support.design.widget.AppBarLayout>
+        <Button
+            android:id="@+id/recycler_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="recycler ListView"/>
 
-    <include layout="@layout/content_main" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="grid"/>
 
-</android.support.design.widget.CoordinatorLayout>
+        <Button
+            android:id="@+id/recycler_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="recycler GridView"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="starggered"/>
+
+        <Button
+            android:id="@+id/recycler_staggered"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="recycler Staggered"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SimpleRecyclerView(Header and footer are auto generated)"/>
+
+        <Button
+            android:id="@+id/simple_ptr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Simple ptr"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="horizontal mode"/>
+
+        <Button
+            android:id="@+id/horizontal_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="horizontal mode"/>
+
+    </LinearLayout>
+
+
+</ScrollView>
+

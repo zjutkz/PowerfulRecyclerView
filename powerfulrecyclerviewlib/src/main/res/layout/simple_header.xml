@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.kangzhe.powerfulrecyclerviewlib.Simple.SimpleHeaderContainer
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <com.example.kangzhe.powerfulrecyclerviewlib.Simple.SimpleImageView
+            android:id="@+id/header_iv"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:scaleType="fitXY"/>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:indeterminateDrawable="@drawable/ptr_img_progress"
+            android:visibility="invisible"/>
+    </FrameLayout>
+
+    <com.example.kangzhe.powerfulrecyclerviewlib.Simple.SimpleTextView
+        android:id="@+id/header_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</com.example.kangzhe.powerfulrecyclerviewlib.Simple.SimpleHeaderContainer>

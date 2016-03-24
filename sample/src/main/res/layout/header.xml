@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.kangzhe.sample.view.HeaderContainer
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/header"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom">
+
+    <com.example.kangzhe.sample.view.HeaderTextView
+        android:id="@+id/header_tv"
+        android:layout_gravity="bottom|left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="header text"/>
+
+    <com.example.kangzhe.sample.view.HeaderImageView
+        android:id="@+id/header_iv"
+        android:layout_gravity="bottom|right"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        android:text="header text"/>
+
+    <com.example.kangzhe.sample.view.HeaderScaleImageView
+        android:id="@+id/header_iv2"
+        android:layout_gravity="bottom|center"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="fitXY"/>
+
+</com.example.kangzhe.sample.view.HeaderContainer>

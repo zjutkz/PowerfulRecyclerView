@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/item_container"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="15dp">
+
+    <FrameLayout
+        android:id="@+id/product_img_parent"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:background="#3f000000">
+
+        <ImageView
+            android:id="@+id/item_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#CECECE"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:id="@+id/flag_seckill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|left"
+            android:src="@mipmap/ic_launcher"
+            android:visibility="gone" />
+
+
+        <RelativeLayout
+            android:id="@+id/marker_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="#3f000000"/>
+
+            <ImageView
+                android:id="@+id/marker_flag"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/ic_launcher"/>
+        </RelativeLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/itemBody"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/product_img_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/del_collected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/ic_launcher"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/product_title"
+                style="@style/bj_list_item_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/del_collected"
+                android:ellipsize="end"
+                android:lines="2"
+                android:text="米苏2014夏装女装新款拼色短袖上衣韩版宽松韩版宽松韩版宽松韩版宽松大"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/price_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_title"
+            android:layout_marginTop="1dp"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/product_cur_price"
+                style="@style/bj_list_item_cur_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥146" />
+
+            <TextView
+                android:id="@+id/product_orig_price"
+                style="@style/bj_list_item_orig_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:singleLine="true"
+                android:text="￥200" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/product_discount_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/price_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/bj_frame_red_white"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="1dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingTop="1dp">
+
+            <TextView
+                android:id="@+id/product_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="4.6"
+                android:textColor="#f02832"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/label_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="折"
+                android:textColor="#f02832"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/product_sold_amount"
+                style="@style/bj_list_item_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="销量"
+                android:textSize="13sp" />
+
+
+            <!-- 限时抢中不会展示平台，因此不可能与提醒按钮重叠 -->
+            <TextView
+                android:id="@+id/product_platform"
+                style="@style/bj_list_item_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/product_sold_amount"
+                android:layout_alignParentRight="true"
+                android:text="微店"
+                android:textSize="13sp" />
+
+
+            <TextView
+                android:id="@+id/reminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/product_sold_amount"
+                android:gravity="center"
+                android:paddingBottom="3dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="3dp"
+                android:text="提醒我"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+
+
+            <!-- 限时抢中才会有的预售信息 -->
+            <TextView
+                android:id="@+id/tv_presell_info"
+                style="@style/bj_list_item_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/reminder"
+                android:layout_below="@id/product_sold_amount"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="1dp"
+                android:text="10:00开抢"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+
+
+        <!--<ImageView-->
+        <!--android:id="@+id/reminder_holder"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:padding="5dp" />-->
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/split_line"
+        style="@style/bj_split_line_h"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/itemBody"/>
+
+    <ImageView
+        android:id="@+id/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        android:visibility="invisible"/>
+
+</RelativeLayout>
