@@ -1,4 +1,4 @@
-package com.example.kangzhe.powerfulrecyclerviewlib.Utils;
+package com.example.kangzhe.powerfulrecyclerviewlib.utils;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -6,9 +6,10 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.kangzhe.powerfulrecyclerviewlib.Ptr.PowerfulRecyclerView;
+
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.IFooterView;
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnLoadMoreListener;
+import com.example.kangzhe.powerfulrecyclerviewlib.ptr.PowerfulRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;

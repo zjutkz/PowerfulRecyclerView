@@ -1,4 +1,4 @@
-package com.example.kangzhe.powerfulrecyclerviewlib.Ptr;
+package com.example.kangzhe.powerfulrecyclerviewlib.ptr;
 
 import android.content.Context;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -7,10 +7,11 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 
 import com.example.kangzhe.powerfulrecyclerviewlib.R;
-import com.example.kangzhe.powerfulrecyclerviewlib.Simple.SimpleImageView;
-import com.example.kangzhe.powerfulrecyclerviewlib.Simple.SimpleTextView;
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.IHeaderView;
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnViewClick;
+import com.example.kangzhe.powerfulrecyclerviewlib.simple.SimpleImageView;
+import com.example.kangzhe.powerfulrecyclerviewlib.simple.SimpleTextView;
+
 
 /**
  * Created by kangzhe on 16/1/5.
@@ -18,7 +19,7 @@ import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnViewClick;
 public class PowerfulSimpleRecyclerView extends PowerfulRecyclerView implements OnViewClick,SwipeRefreshLayout.OnRefreshListener{
 
     private static final String TAG = "WdSimplePtrContainer";
-
+    
     public PowerfulSimpleRecyclerView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }

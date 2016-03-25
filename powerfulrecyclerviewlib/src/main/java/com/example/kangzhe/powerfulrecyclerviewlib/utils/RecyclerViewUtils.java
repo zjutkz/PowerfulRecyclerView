@@ -1,4 +1,4 @@
-package com.example.kangzhe.powerfulrecyclerviewlib.Utils;
+package com.example.kangzhe.powerfulrecyclerviewlib.utils;
 
 import android.graphics.Rect;
 import android.support.v4.view.MotionEventCompat;
@@ -9,8 +9,8 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.kangzhe.powerfulrecyclerviewlib.Adapter.PowerfulRecyclerAdapter;
-import com.example.kangzhe.powerfulrecyclerviewlib.TouchHelper.ItemTouchHelperFactory;
+import com.example.kangzhe.powerfulrecyclerviewlib.adapter.PowerfulRecyclerAdapter;
+import com.example.kangzhe.powerfulrecyclerviewlib.touchHelper.ItemTouchHelperFactory;
 
 
 /**

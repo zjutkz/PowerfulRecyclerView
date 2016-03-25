@@ -1,12 +1,12 @@
-package com.example.kangzhe.powerfulrecyclerviewlib.TouchHelper;
+package com.example.kangzhe.powerfulrecyclerviewlib.touchHelper;
 
 import android.graphics.Canvas;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
-import com.example.kangzhe.powerfulrecyclerviewlib.Adapter.PowerfulRecyclerAdapter;
-import com.example.kangzhe.powerfulrecyclerviewlib.Ptr.PowerfulRecyclerView;
+import com.example.kangzhe.powerfulrecyclerviewlib.adapter.PowerfulRecyclerAdapter;
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.ItemTouchAdapter;
+import com.example.kangzhe.powerfulrecyclerviewlib.ptr.PowerfulRecyclerView;
 
 
 /**

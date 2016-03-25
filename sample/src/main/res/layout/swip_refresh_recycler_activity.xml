@@ -19,7 +19,7 @@
             android:scaleType="fitXY"/>
     </LinearLayout>
 
-    <com.example.kangzhe.powerfulrecyclerviewlib.Ptr.PowerfulRecyclerView
+    <com.example.kangzhe.powerfulrecyclerviewlib.ptr.PowerfulRecyclerView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"

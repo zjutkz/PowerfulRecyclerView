@@ -1,4 +1,4 @@
-package com.example.kangzhe.powerfulrecyclerviewlib.Simple;
+package com.example.kangzhe.powerfulrecyclerviewlib.simple;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;

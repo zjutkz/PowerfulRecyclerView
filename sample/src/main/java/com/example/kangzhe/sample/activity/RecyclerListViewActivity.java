@@ -18,8 +18,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.example.kangzhe.powerfulrecyclerviewlib.Animator.Impl.ZoomInAnimator;
-import com.example.kangzhe.powerfulrecyclerviewlib.Ptr.PowerfulRecyclerView;
+import com.example.kangzhe.powerfulrecyclerviewlib.animator.impl.ZoomInAnimator;
+import com.example.kangzhe.powerfulrecyclerviewlib.ptr.PowerfulRecyclerView;
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.ItemTouchAdapter;
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnLoadMoreListener;
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnRefreshListener;

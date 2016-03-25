@@ -1,4 +1,4 @@
-package com.example.kangzhe.powerfulrecyclerviewlib.Ptr;
+package com.example.kangzhe.powerfulrecyclerviewlib.ptr;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
@@ -24,15 +24,15 @@ import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.widget.LinearLayout;
 
-import com.example.kangzhe.powerfulrecyclerviewlib.Adapter.PowerfulRecyclerAdapter;
-import com.example.kangzhe.powerfulrecyclerviewlib.Animator.base.BaseItemAnimator;
 import com.example.kangzhe.powerfulrecyclerviewlib.R;
-import com.example.kangzhe.powerfulrecyclerviewlib.Utils.FooterUtils;
-import com.example.kangzhe.powerfulrecyclerviewlib.Utils.RecyclerViewUtils;
+import com.example.kangzhe.powerfulrecyclerviewlib.adapter.PowerfulRecyclerAdapter;
+import com.example.kangzhe.powerfulrecyclerviewlib.animator.base.BaseItemAnimator;
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.IHeaderView;
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnLoadMoreListener;
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnRefreshListener;
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnViewClick;
+import com.example.kangzhe.powerfulrecyclerviewlib.utils.FooterUtils;
+import com.example.kangzhe.powerfulrecyclerviewlib.utils.RecyclerViewUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,9 +40,9 @@ import java.util.List;
 /**
  * Created by kangzhe on 16/1/1.
  */
-public class PowerfulRecyclerView extends LinearLayout implements OnViewClick,SwipeRefreshLayout.OnRefreshListener,NestedScrollingParent, NestedScrollingChild{
+public class PowerfulRecyclerView extends LinearLayout implements OnViewClick,SwipeRefreshLayout.OnRefreshListener,NestedScrollingParent, NestedScrollingChild {
 
-    private static final String TAG = "WdPtrContainer";
+    private static final String TAG = "PowerfulPtrContainer";
 
     /**
      * 没有数据的布局
@@ -177,9 +177,9 @@ public class PowerfulRecyclerView extends LinearLayout implements OnViewClick,Sw
 
     private int orientationMode = ORIENTATION_VERTICAL;
 
-    protected  NestedScrollingParentHelper mNestedScrollingParentHelper;
+    protected NestedScrollingParentHelper mNestedScrollingParentHelper;
 
-    protected  NestedScrollingChildHelper mNestedScrollingChildHelper;
+    protected NestedScrollingChildHelper mNestedScrollingChildHelper;
 
     /**
      * recyclerView在y坐标上未消费的总距离

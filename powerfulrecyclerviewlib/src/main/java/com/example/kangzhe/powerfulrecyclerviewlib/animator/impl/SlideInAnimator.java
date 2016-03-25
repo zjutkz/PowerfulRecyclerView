@@ -1,4 +1,4 @@
-package com.example.kangzhe.powerfulrecyclerviewlib.Animator.Impl;
+package com.example.kangzhe.powerfulrecyclerviewlib.animator.impl;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -6,7 +6,7 @@ import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.example.kangzhe.powerfulrecyclerviewlib.Animator.base.BaseItemAnimator;
+import com.example.kangzhe.powerfulrecyclerviewlib.animator.base.BaseItemAnimator;
 
 
 /**

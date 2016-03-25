@@ -1,4 +1,4 @@
-package com.example.kangzhe.powerfulrecyclerviewlib.Utils;
+package com.example.kangzhe.powerfulrecyclerviewlib.utils;
 
 import android.support.v4.view.ViewCompat;
 import android.view.View;

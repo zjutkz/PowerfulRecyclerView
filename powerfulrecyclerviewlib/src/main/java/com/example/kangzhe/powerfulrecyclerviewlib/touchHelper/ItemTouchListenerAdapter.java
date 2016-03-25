@@ -1,4 +1,4 @@
-package com.example.kangzhe.powerfulrecyclerviewlib.TouchHelper;
+package com.example.kangzhe.powerfulrecyclerviewlib.touchHelper;
 
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
@@ -6,8 +6,9 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.kangzhe.powerfulrecyclerviewlib.Adapter.PowerfulRecyclerAdapter;
+import com.example.kangzhe.powerfulrecyclerviewlib.adapter.PowerfulRecyclerAdapter;
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnViewClick;
+
 
 /**
  * Created by kangzhe on 16/3/9.

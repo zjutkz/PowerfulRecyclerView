@@ -1,4 +1,4 @@
-package com.example.kangzhe.powerfulrecyclerviewlib.Animator.base;
+package com.example.kangzhe.powerfulrecyclerviewlib.animator.base;
 
 import android.animation.AnimatorSet;
 import android.os.Handler;
@@ -7,12 +7,12 @@ import android.support.v4.view.ViewPropertyAnimatorCompat;
 import android.support.v4.view.ViewPropertyAnimatorListener;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SimpleItemAnimator;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 
-import com.example.kangzhe.powerfulrecyclerviewlib.Utils.AnimateViewUtils;
+
+import com.example.kangzhe.powerfulrecyclerviewlib.utils.AnimateViewUtils;
 
 import java.util.ArrayList;
 
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 /**
  * Created by kangzhe on 16/1/29.
  */
-public abstract class BaseItemAnimator extends SimpleItemAnimator{
+public abstract class BaseItemAnimator extends SimpleItemAnimator {
 
     private static final String TAG = "BaseItemAnimator";
 
@@ -99,7 +99,7 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator{
              * 如果在判断change逻辑的时候，还在进行remove，就等remove逻辑执行完了再执行move，同下。
              * 这个delay的时间应该和动画的时间相等。关于时间不应该自己直接写数字，而应该调用getXXXDuration()。
              * 怎么改变这个时间具体见
-             * @see com.vdian.UI.animator.impl.ZoomInAnimator
+             * @see com.vdian.ui.animator.impl.ZoomInAnimator
              */
             if(shouldRemove){
                 postHandler.postDelayed(changePadding, totalTime);

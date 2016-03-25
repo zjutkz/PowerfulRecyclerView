@@ -1,4 +1,4 @@
-package com.example.kangzhe.powerfulrecyclerviewlib.Adapter;
+package com.example.kangzhe.powerfulrecyclerviewlib.adapter;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;

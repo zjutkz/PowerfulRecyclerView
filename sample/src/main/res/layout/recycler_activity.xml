@@ -26,7 +26,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-        <com.example.kangzhe.powerfulrecyclerviewlib.Ptr.PowerfulRecyclerView
+        <com.example.kangzhe.powerfulrecyclerviewlib.ptr.PowerfulRecyclerView
             android:id="@+id/ptr_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

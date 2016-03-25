@@ -19,7 +19,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.example.kangzhe.powerfulrecyclerviewlib.Ptr.PowerfulRecyclerView;
+import com.example.kangzhe.powerfulrecyclerviewlib.ptr.PowerfulRecyclerView;
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnLoadMoreListener;
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnRefreshListener;
 import com.example.kangzhe.sample.fragment.MyFragment1;
