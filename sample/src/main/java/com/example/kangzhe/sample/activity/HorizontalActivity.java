@@ -20,6 +20,7 @@ import com.example.kangzhe.powerfulrecyclerviewlib.ptr.PowerfulRecyclerView;
 import com.example.kangzhe.powerfulrecyclerviewlib.ptr.PowerfulSimpleRecyclerView;
 import com.example.kangzhe.sample.R;
 import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -36,11 +37,11 @@ public class HorizontalActivity extends AppCompatActivity implements OnRefreshLi
     private List<Integer> datas = new ArrayList<Integer>();
 
     PowerfulSimpleRecyclerView horizontalList;
-    
+
     int loadMoreCount = 0;
 
     private int positionToRestore = 0;
-    
+
     private Handler mHandler = new Handler(){
 
         @Override
@@ -107,7 +108,7 @@ public class HorizontalActivity extends AppCompatActivity implements OnRefreshLi
 
         horizontalList.setSelection(positionToRestore);
     }
-    
+
     private void getDatas(int msg) {
 
 
