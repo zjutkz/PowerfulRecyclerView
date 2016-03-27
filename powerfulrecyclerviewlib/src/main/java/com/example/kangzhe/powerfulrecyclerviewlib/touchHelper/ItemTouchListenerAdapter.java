@@ -13,7 +13,7 @@ import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnViewClick;
 /**
  * Created by kangzhe on 16/3/9.
  */
-public  class ItemTouchListenerAdapter extends GestureDetector.SimpleOnGestureListener implements RecyclerView.OnItemTouchListener {
+public class ItemTouchListenerAdapter extends GestureDetector.SimpleOnGestureListener implements RecyclerView.OnItemTouchListener {
 
     private OnViewClick listener;
     private RecyclerView recyclerView;

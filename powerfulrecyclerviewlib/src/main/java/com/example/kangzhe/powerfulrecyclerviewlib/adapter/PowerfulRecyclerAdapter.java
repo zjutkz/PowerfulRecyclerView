@@ -94,19 +94,6 @@ public class PowerfulRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
             if(position < getHeaderViewCount() || position == getItemCount() - 1){
                 //do nothing
             }else{
-                holder.itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        parent.onClick(holder,position - getHeaderViewCount());
-                    }
-                });
-
-                holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View v) {
-                        return parent.onLongClick(holder,position - getHeaderViewCount());
-                    }
-                });
 
                 mPlugAdapter.onBindViewHolder(holder, position - getHeaderViewCount());
             }
@@ -115,20 +102,6 @@ public class PowerfulRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                 //do nothing
             }else{
 
-                holder.itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        parent.onClick(holder, position);
-                    }
-                });
-
-                holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View v) {
-                        return parent.onLongClick(holder, position);
-                    }
-                });
-
                 mPlugAdapter.onBindViewHolder(holder,position);
             }
         }else if(!hasFootView() && hasHeaderView()){
@@ -136,37 +109,9 @@ public class PowerfulRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                 //do nothing
             }else{
 
-                holder.itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        parent.onClick(holder,position - getHeaderViewCount());
-                    }
-                });
-
-                holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View v) {
-                        return parent.onLongClick(holder,position - getHeaderViewCount());
-                    }
-                });
-
                 mPlugAdapter.onBindViewHolder(holder,position - getHeaderViewCount());
             }
         }else{
-
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    parent.onClick(holder,position);
-                }
-            });
-
-            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    return parent.onLongClick(holder,position);
-                }
-            });
 
             mPlugAdapter.onBindViewHolder(holder, position);
         }

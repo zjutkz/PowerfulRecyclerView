@@ -31,6 +31,7 @@ import com.example.kangzhe.powerfulrecyclerviewlib.listener.IHeaderView;
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnLoadMoreListener;
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnRefreshListener;
 import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnViewClick;
+import com.example.kangzhe.powerfulrecyclerviewlib.touchHelper.ItemTouchListenerAdapter;
 import com.example.kangzhe.powerfulrecyclerviewlib.utils.FooterUtils;
 import com.example.kangzhe.powerfulrecyclerviewlib.utils.RecyclerViewUtils;
 
@@ -436,6 +437,9 @@ public class PowerfulRecyclerView extends LinearLayout implements OnViewClick,Sw
                 }
             }
         });
+
+        ItemTouchListenerAdapter mTouchListenerAdapter = new ItemTouchListenerAdapter(mRecyclerView,this);
+        mRecyclerView.addOnItemTouchListener(mTouchListenerAdapter);
     }
 
     /**
