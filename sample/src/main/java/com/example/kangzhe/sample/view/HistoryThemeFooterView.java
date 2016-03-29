@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.kangzhe.powerfulrecyclerviewlib.listener.IFooterView;
+import com.zjutkz.powerfulrecyclerview.listener.IFooterView;
 import com.example.kangzhe.sample.R;
 
 

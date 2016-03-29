@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
-import com.example.kangzhe.powerfulrecyclerviewlib.listener.IFooterView;
+import com.zjutkz.powerfulrecyclerview.listener.IFooterView;
 
 
 /**

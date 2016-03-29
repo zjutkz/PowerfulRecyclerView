@@ -2,116 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="5e412e954a24c5310a459c09870e4e2081aceb03">
-        <dex dex="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-23.1.1_fbbb3f02b9f3f81b2ed11c551d3e6fe2240ee078.jar" />
-    </item>
-    <item
-        jar="/Users/kangzhe/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.5.0/4de2b4ed3445c37ec1720a7d214712e845a24636/okhttp-2.5.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
-        <dex dex="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/pre-dexed/debug/okhttp-2.5.0_d617a7a3dafd2a865e43845d99c88a0e877ceab2.jar" />
-    </item>
-    <item
-        jar="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/pre-dexed/debug/com.android.support-design-23.1.1_ec5765fbaaf0b45ad5840ece14b1acb8f94dcc42.jar" />
-    </item>
-    <item
         jar="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/exploded-aar/PowerfulRecyclerView/powerfulrecyclerviewlib/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="0323de9c0c1b71b49de0bd18ecc6a0239e581cfc">
+        sha1="c5a3e574e7c8a1c511fbaac11951df732bcc2e43">
         <dex dex="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/pre-dexed/debug/PowerfulRecyclerView-powerfulrecyclerviewlib-unspecified_decdef5edc414d881fce1fc0e9cb0e8eac2ff257.jar" />
-    </item>
-    <item
-        jar="/Users/kangzhe/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.6.1/86b122e640af09b0723e1fa44083c354ba6d9089/glide-3.6.1.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="86b122e640af09b0723e1fa44083c354ba6d9089">
-        <dex dex="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/pre-dexed/debug/glide-3.6.1_af366eb609a245dc25210ef88d17b9e414f5be5d.jar" />
-    </item>
-    <item
-        jar="/Users/kangzhe/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.0.14/898f9ab61e2a23afd615f0b0389478bec86f49f9/rxjava-1.0.14.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="898f9ab61e2a23afd615f0b0389478bec86f49f9">
-        <dex dex="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/pre-dexed/debug/rxjava-1.0.14_82f6182f154747c32561b3538de045bcf38ad3d7.jar" />
-    </item>
-    <item
-        jar="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/pre-dexed/debug/internal_impl-23.1.1_1accd48b49349b11abfe17b900444aa24829c97a.jar" />
-    </item>
-    <item
-        jar="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.1.1_348bb5d31d8ace1e0ce928ea1d22b9a4f7b87dd4.jar" />
-    </item>
-    <item
-        jar="/Users/kangzhe/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/pre-dexed/debug/support-annotations-23.1.1_66ed36c33baf9a0fd6d13f4cba11699ef384b561.jar" />
-    </item>
-    <item
-        jar="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.1.1_324c56bb555c551cc330c38995ceb8276175b0de.jar" />
-    </item>
-    <item
-        jar="/Users/kangzhe/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/adapter-rxjava/2.0.0-beta2/3a233746381a03dbb0f5f3ed10b11c3e72dba499/adapter-rxjava-2.0.0-beta2.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="3a233746381a03dbb0f5f3ed10b11c3e72dba499">
-        <dex dex="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/pre-dexed/debug/adapter-rxjava-2.0.0-beta2_fc84ab64ce2cfd9c667c127d6399c65320b4eed1.jar" />
-    </item>
-    <item
-        jar="/Users/kangzhe/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="98476622f10715998eacf9240d6b479f12c66143">
-        <dex dex="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/pre-dexed/debug/okio-1.6.0_5d696ec4a69c8b1940b94cbb3e82833a276b0eff.jar" />
-    </item>
-    <item
-        jar="/Users/kangzhe/.gradle/caches/modules-2/files-2.1/com.nostra13.universalimageloader/universal-image-loader/1.9.3/a85588bec3e2c4584d593d3f15df1677321bca72/universal-image-loader-1.9.3.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="a85588bec3e2c4584d593d3f15df1677321bca72">
-        <dex dex="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/pre-dexed/debug/universal-image-loader-1.9.3_70863d847ef2383a40413a70ddebeeca3f5211a2.jar" />
-    </item>
-    <item
-        jar="/Users/kangzhe/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/2.0.0-beta2/880d9e0997b2d1bfc98e0d121ced33ee5d04aac4/retrofit-2.0.0-beta2.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="880d9e0997b2d1bfc98e0d121ced33ee5d04aac4">
-        <dex dex="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/pre-dexed/debug/retrofit-2.0.0-beta2_cc5eda4b7abf4cbd4781192daacb0796ca3e8006.jar" />
-    </item>
-    <item
-        jar="/Users/kangzhe/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/pre-dexed/debug/picasso-2.5.2_7d65d215a36d396cb79a2511be68a816bf244e80.jar" />
-    </item>
-    <item
-        jar="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.1.1_fdf39a395c4c3d45c36a83ccac59a786e7c60f81.jar" />
     </item>
 
 </items>

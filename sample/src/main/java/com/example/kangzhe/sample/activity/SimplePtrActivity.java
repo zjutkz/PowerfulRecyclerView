@@ -18,10 +18,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.example.kangzhe.powerfulrecyclerviewlib.ptr.PowerfulRecyclerView;
-import com.example.kangzhe.powerfulrecyclerviewlib.ptr.PowerfulSimpleRecyclerView;
-import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnLoadMoreListener;
-import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnRefreshListener;
+import com.zjutkz.powerfulrecyclerview.ptr.PowerfulRecyclerView;
+import com.zjutkz.powerfulrecyclerview.ptr.PowerfulSimpleRecyclerView;
+import com.zjutkz.powerfulrecyclerview.listener.OnLoadMoreListener;
+import com.zjutkz.powerfulrecyclerview.listener.OnRefreshListener;
 import com.example.kangzhe.sample.fragment.MyFragment1;
 import com.example.kangzhe.sample.fragment.MyFragment2;
 import com.example.kangzhe.sample.fragment.MyFragment3;

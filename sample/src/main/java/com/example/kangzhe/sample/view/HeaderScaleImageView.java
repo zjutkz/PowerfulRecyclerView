@@ -5,7 +5,7 @@ import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.example.kangzhe.powerfulrecyclerviewlib.listener.IHeaderView;
+import com.zjutkz.powerfulrecyclerview.listener.IHeaderView;
 import com.example.kangzhe.sample.R;
 
 

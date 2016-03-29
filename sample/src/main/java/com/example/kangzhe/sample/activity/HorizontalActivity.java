@@ -13,11 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.example.kangzhe.powerfulrecyclerviewlib.listener.ItemTouchAdapter;
-import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnLoadMoreListener;
-import com.example.kangzhe.powerfulrecyclerviewlib.listener.OnRefreshListener;
-import com.example.kangzhe.powerfulrecyclerviewlib.ptr.PowerfulRecyclerView;
-import com.example.kangzhe.powerfulrecyclerviewlib.ptr.PowerfulSimpleRecyclerView;
+import com.zjutkz.powerfulrecyclerview.listener.ItemTouchAdapter;
+import com.zjutkz.powerfulrecyclerview.listener.OnLoadMoreListener;
+import com.zjutkz.powerfulrecyclerview.listener.OnRefreshListener;
+import com.zjutkz.powerfulrecyclerview.ptr.PowerfulRecyclerView;
+import com.zjutkz.powerfulrecyclerview.ptr.PowerfulSimpleRecyclerView;
 import com.example.kangzhe.sample.R;
 import com.squareup.picasso.Picasso;
 

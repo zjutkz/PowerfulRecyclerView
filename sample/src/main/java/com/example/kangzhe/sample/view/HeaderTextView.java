@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-import com.example.kangzhe.powerfulrecyclerviewlib.listener.IHeaderView;
+import com.zjutkz.powerfulrecyclerview.listener.IHeaderView;
 
 
 /**

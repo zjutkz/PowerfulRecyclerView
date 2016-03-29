@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.kangzhe.powerfulrecyclerviewlib.simple.SimpleHeaderContainer
+<com.zjutkz.powerfulrecyclerview.simple.SimpleHeaderContainer
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
-        <com.example.kangzhe.powerfulrecyclerviewlib.simple.SimpleImageView
+        <com.zjutkz.powerfulrecyclerview.simple.SimpleImageView
             android:id="@+id/header_iv"
             android:layout_width="30dp"
             android:layout_height="40dp"
@@ -25,9 +25,9 @@
             android:visibility="invisible"/>
     </FrameLayout>
 
-    <com.example.kangzhe.powerfulrecyclerviewlib.simple.SimpleTextView
+    <com.zjutkz.powerfulrecyclerview.simple.SimpleTextView
         android:id="@+id/header_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-</com.example.kangzhe.powerfulrecyclerviewlib.simple.SimpleHeaderContainer>
+</com.zjutkz.powerfulrecyclerview.simple.SimpleHeaderContainer>

@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.kangzhe.powerfulrecyclerviewlib.listener.IHeaderView;
+import com.zjutkz.powerfulrecyclerview.listener.IHeaderView;
 import com.example.kangzhe.sample.R;
 
 /**
