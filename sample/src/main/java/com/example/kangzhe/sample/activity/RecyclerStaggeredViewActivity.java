@@ -40,7 +40,7 @@ public class RecyclerStaggeredViewActivity extends AppCompatActivity implements 
 
     private static final String TAG = "StaggeredViewActivity";
 
-    private PowerfulRecyclerView container;
+    private PowerfulRecyclerView recycler;
 
     private ImageView returnToTop;
 
@@ -86,10 +86,10 @@ public class RecyclerStaggeredViewActivity extends AppCompatActivity implements 
 
                 loadMoreCount = 0;
 
-                container.stopRefresh();
+                recycler.stopRefresh();
 
-                if(!container.isLoadMoreEnable()){
-                    container.setLoadMoreEnable(true);
+                if(!recycler.isLoadMoreEnable()){
+                    recycler.setLoadMoreEnable(true);
                 }
             }else if(msg.what == 1){
 
@@ -97,9 +97,9 @@ public class RecyclerStaggeredViewActivity extends AppCompatActivity implements 
 
                 adapter.notifyItemRangeInserted(adapter.getItemCount(), 9);
 
-                container.stopLoadMore();
+                recycler.stopLoadMore();
             }else if(msg.what == 2){
-                container.setLoadMoreEnable(false);
+                recycler.setLoadMoreEnable(false);
             }
         }
     };
@@ -109,7 +109,7 @@ public class RecyclerStaggeredViewActivity extends AppCompatActivity implements 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycler_activity);
 
-        container = (PowerfulRecyclerView)findViewById(R.id.ptr_container);
+        recycler = (PowerfulRecyclerView)findViewById(R.id.ptr_container);
 
         returnToTop = (ImageView)findViewById(R.id.btn_return_to_top);
 
@@ -117,19 +117,19 @@ public class RecyclerStaggeredViewActivity extends AppCompatActivity implements 
 
         adapter = new MyAdapter();
 
-        container.setAdapter(adapter);
+        recycler.setAdapter(adapter);
 
-        container.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        recycler.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
 
 
 
-        //container.addItemDecoration(new DividerGridItemDecoration(this));
+        //recycler.addItemDecoration(new DividerGridItemDecoration(this));
 
-        header = (FrameLayout) LayoutInflater.from(this).inflate(R.layout.header, container, false);
+        header = (FrameLayout) LayoutInflater.from(this).inflate(R.layout.header, recycler, false);
 
-        container.setHeaderView(header);
+        recycler.setHeaderView(header);
 
-        //container.setFooterView(footer);
+        //recycler.setFooterView(footer);
 
         staggeredHeader = (LinearLayout)LayoutInflater.from(this).inflate(R.layout.list_header_viewpager, null);
 
@@ -144,20 +144,20 @@ public class RecyclerStaggeredViewActivity extends AppCompatActivity implements 
 
         vp.setAdapter(pagerAdapter);
 
-        container.addRecyclerViewHeader(staggeredHeader);
+        recycler.addRecyclerViewHeader(staggeredHeader);
 
-        container.setOnRefreshListener(this);
+        recycler.setOnRefreshListener(this);
 
-        container.setOnLoadMoreListener(this);
+        recycler.setOnLoadMoreListener(this);
 
-        container.setOnItemClickListener(new PowerfulRecyclerView.OnItemClickListener() {
+        recycler.setOnItemClickListener(new PowerfulRecyclerView.OnItemClickListener() {
             @Override
             public void onItemClick(RecyclerView parent, RecyclerView.ViewHolder holder, int position) {
                 Toast.makeText(RecyclerStaggeredViewActivity.this, "click" + position, Toast.LENGTH_SHORT).show();
             }
         });
 
-        container.setOnItemLongClickListener(new PowerfulRecyclerView.OnItemLongClickListener() {
+        recycler.setOnItemLongClickListener(new PowerfulRecyclerView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(RecyclerView parent, RecyclerView.ViewHolder holder, int position) {
                 Toast.makeText(RecyclerStaggeredViewActivity.this, "long click" + position, Toast.LENGTH_SHORT).show();
@@ -165,7 +165,7 @@ public class RecyclerStaggeredViewActivity extends AppCompatActivity implements 
             }
         });
 
-        container.setOnShowTopListener(new PowerfulRecyclerView.OnShowTopListener() {
+        recycler.setOnShowTopListener(new PowerfulRecyclerView.OnShowTopListener() {
             @Override
             public void showTop(boolean isShow) {
                 if (isShow) {
@@ -179,7 +179,7 @@ public class RecyclerStaggeredViewActivity extends AppCompatActivity implements 
         returnToTop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                container.returnToTop();
+                recycler.returnToTop();
             }
         });
     }

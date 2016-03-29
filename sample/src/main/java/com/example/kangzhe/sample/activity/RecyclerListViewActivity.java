@@ -42,7 +42,7 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
 
     private static final String TAG = "RecyclerActivity";
 
-    private PowerfulRecyclerView container;
+    private PowerfulRecyclerView recycler;
 
     private ImageView returnToTop;
 
@@ -80,10 +80,10 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
                 adapter.notifyDataSetChanged();
                 loadMoreCount = 0;
 
-                container.stopRefresh();
+                recycler.stopRefresh();
 
-                if(!container.isLoadMoreEnable()){
-                    container.setLoadMoreEnable(true);
+                if(!recycler.isLoadMoreEnable()){
+                    recycler.setLoadMoreEnable(true);
                 }
             }else if(msg.what == 1){
 
@@ -91,11 +91,11 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
 
                 adapter.notifyItemRangeInserted(adapter.getItemCount(), 9);
 
-                container.stopLoadMore();
+                recycler.stopLoadMore();
             }else if(msg.what == 2){
-                container.setLoadMoreEnable(false);
+                recycler.setLoadMoreEnable(false);
             }else if(msg.what == 3){
-                container.hideSpecialInfoView();
+                recycler.hideSpecialInfoView();
             }
         }
     };
@@ -105,7 +105,7 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycler_activity);
 
-        container = (PowerfulRecyclerView)findViewById(R.id.ptr_container);
+        recycler = (PowerfulRecyclerView)findViewById(R.id.ptr_container);
 
         returnToTop = (ImageView)findViewById(R.id.btn_return_to_top);
 
@@ -118,26 +118,26 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
             public void run() {
                 getDatas(1);
                 adapter.notifyDataSetChanged();
-                container.stopRefresh();
-                container.stopLoadMore();
+                recycler.stopRefresh();
+                recycler.stopLoadMore();
             }
         }, 1500);
 
         adapter = new MyAdapter(this,datas);
 
-        container.setAdapter(adapter);
+        recycler.setAdapter(adapter);
 
-        container.setLayoutManager(new LinearLayoutManager(this));
+        recycler.setLayoutManager(new LinearLayoutManager(this));
 
-        //container.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
+        //recycler.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
 
-        header = (HistoryThemeHeaderView) LayoutInflater.from(this).inflate(R.layout.history_header_theme, container, false);
+        header = (HistoryThemeHeaderView) LayoutInflater.from(this).inflate(R.layout.history_header_theme, recycler, false);
 
-        footer = (HistoryThemeFooterView) LayoutInflater.from(this).inflate(R.layout.history_footer_theme, container, false);
+        footer = (HistoryThemeFooterView) LayoutInflater.from(this).inflate(R.layout.history_footer_theme, recycler, false);
 
-        container.setHeaderView(header);
+        recycler.setHeaderView(header);
 
-        container.setFooterView(footer);
+        recycler.setFooterView(footer);
 
         listHeader = (LinearLayout)LayoutInflater.from(this).inflate(R.layout.list_header_viewpager, null);
 
@@ -152,19 +152,19 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
 
         vp.setAdapter(pagerAdapter);
 
-        container.setPositionToShowBtn(4);
+        recycler.setPositionToShowBtn(4);
 
-        container.addRecyclerViewHeader(listHeader, true);
+        recycler.addRecyclerViewHeader(listHeader, true);
 
-        container.prepareForDragAndSwipe(true, true);
+        recycler.prepareForDragAndSwipe(true, true);
 
-        container.setScrollBarEnable(false);
+        recycler.setScrollBarEnable(false);
 
-        container.setOnRefreshListener(this);
+        recycler.setOnRefreshListener(this);
 
-        container.setOnLoadMoreListener(this);
+        recycler.setOnLoadMoreListener(this);
 
-        container.setOnItemClickListener(new PowerfulRecyclerView.OnItemClickListener() {
+        recycler.setOnItemClickListener(new PowerfulRecyclerView.OnItemClickListener() {
             @Override
             public void onItemClick(RecyclerView parent, RecyclerView.ViewHolder holder, int position) {
                 Log.d(TAG, "onItemClick: " + position);
@@ -181,7 +181,7 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
         });
 
         //如果设置了可以drag和swipe，不要设置长按监听器
-        /*container.setOnItemLongClickListener(new WdPtrContainer.OnItemLongClickListener() {
+        /*recycler.setOnItemLongClickListener(new WdPtrrecycler.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(RecyclerView parent, RecyclerView.ViewHolder holder, int position) {
                 if(holder instanceof MyAdapter.MyViewHolder){
@@ -192,9 +192,9 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
             }
         });*/
 
-        container.setItemAnimator(new ZoomInAnimator());
+        recycler.setItemAnimator(new ZoomInAnimator());
 
-        container.setOnShowTopListener(new PowerfulRecyclerView.OnShowTopListener() {
+        recycler.setOnShowTopListener(new PowerfulRecyclerView.OnShowTopListener() {
             @Override
             public void showTop(boolean isShow) {
                 if (isShow) {
@@ -208,11 +208,11 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
         returnToTop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                container.autoRefresh();
+                recycler.autoRefresh();
             }
         });
 
-        //container.showLoadingView();
+        //recycler.showLoadingView();
 
         //mHandler.sendMessageDelayed(mHandler.obtainMessage(3), 2000);
     }
@@ -221,15 +221,15 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
     protected void onStop() {
         super.onStop();
 
-        positionToRestore = container.getFirstVisiblePosition();
-        Log.d(TAG, "onStop: " + container.getFirstVisiblePosition() + " " + container.getLastVisiblePosition());
+        positionToRestore = recycler.getFirstVisiblePosition();
+        Log.d(TAG, "onStop: " + recycler.getFirstVisiblePosition() + " " + recycler.getLastVisiblePosition());
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        container.setSelection(positionToRestore);
+        recycler.setSelection(positionToRestore);
     }
 
     private void getDatas(int msg) {

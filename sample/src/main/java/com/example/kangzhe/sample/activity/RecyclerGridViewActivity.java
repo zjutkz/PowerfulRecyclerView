@@ -43,7 +43,7 @@ public class RecyclerGridViewActivity  extends AppCompatActivity implements OnRe
 
     private static final String TAG = "RecyclerActivity";
 
-    private PowerfulRecyclerView container;
+    private PowerfulRecyclerView recycle;
 
     private ImageView returnToTop;
 
@@ -76,10 +76,10 @@ public class RecyclerGridViewActivity  extends AppCompatActivity implements OnRe
 
                 loadMoreCount = 0;
 
-                container.setRefreshing(false);
+                recycle.setRefreshing(false);
 
-                if(!container.isLoadMoreEnable()){
-                    container.setLoadMoreEnable(true);
+                if(!recycle.isLoadMoreEnable()){
+                    recycle.setLoadMoreEnable(true);
                 }
             }else if(msg.what == 1){
 
@@ -87,11 +87,11 @@ public class RecyclerGridViewActivity  extends AppCompatActivity implements OnRe
 
                 adapter.notifyDataSetChanged();
 
-                container.stopLoadMore();
+                recycle.stopLoadMore();
             }else if(msg.what == 2){
-                container.setLoadMoreEnable(false);
+                recycle.setLoadMoreEnable(false);
             }else if(msg.what == 3){
-                container.hideSpecialInfoView();
+                recycle.hideSpecialInfoView();
             }
         }
     };
@@ -113,7 +113,7 @@ public class RecyclerGridViewActivity  extends AppCompatActivity implements OnRe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.swip_refresh_recycler_activity);
 
-        container = (PowerfulRecyclerView)findViewById(R.id.ptr_container);
+        recycle = (PowerfulRecyclerView)findViewById(R.id.ptr_container);
 
         returnToTop = (ImageView)findViewById(R.id.btn_return_to_top);
 
@@ -121,14 +121,14 @@ public class RecyclerGridViewActivity  extends AppCompatActivity implements OnRe
 
         adapter = new MyAdapter(this,datas);
 
-        container.setLayoutManager(new GridLayoutManager(this, 2));
+        recycle.setLayoutManager(new GridLayoutManager(this, 2));
 
-        container.setAdapter(adapter);
+        recycle.setAdapter(adapter);
 
-        container.setFooterLoadText("简单自定义onLoadMore");
+        recycle.setFooterLoadText("简单自定义onLoadMore");
 
-        container.setFooterShowText("简单自定义onShow");
-        //container.addItemDecoration(new DividerGridItemDecoration(this));
+        recycle.setFooterShowText("简单自定义onShow");
+        //recycle.addItemDecoration(new DividerGridItemDecoration(this));
 
         gridHeader = (LinearLayout)LayoutInflater.from(this).inflate(R.layout.list_header_viewpager, null);
 
@@ -143,19 +143,19 @@ public class RecyclerGridViewActivity  extends AppCompatActivity implements OnRe
 
         vp.setAdapter(pagerAdapter);
 
-        container.addRecyclerViewHeader(gridHeader);
+        recycle.addRecyclerViewHeader(gridHeader);
 
-        container.setColorSchemeResources(android.R.color.holo_blue_bright,
+        recycle.setColorSchemeResources(android.R.color.holo_blue_bright,
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
-        //container.setFooterView(footer);
+        //recycle.setFooterView(footer);
 
-        container.setOnRefreshListener(this);
+        recycle.setOnRefreshListener(this);
 
-        container.setOnLoadMoreListener(this);
+        recycle.setOnLoadMoreListener(this);
 
-        container.setOnItemClickListener(new PowerfulRecyclerView.OnItemClickListener() {
+        recycle.setOnItemClickListener(new PowerfulRecyclerView.OnItemClickListener() {
             @Override
             public void onItemClick(RecyclerView parent, RecyclerView.ViewHolder holder, int position) {
                 Toast.makeText(RecyclerGridViewActivity.this, "click" + position, Toast.LENGTH_SHORT).show();
@@ -163,7 +163,7 @@ public class RecyclerGridViewActivity  extends AppCompatActivity implements OnRe
             }
         });
 
-        container.setOnItemLongClickListener(new PowerfulRecyclerView.OnItemLongClickListener() {
+        recycle.setOnItemLongClickListener(new PowerfulRecyclerView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(RecyclerView parent, RecyclerView.ViewHolder holder, int position) {
                 Toast.makeText(RecyclerGridViewActivity.this, "long click" + position, Toast.LENGTH_SHORT).show();
@@ -171,9 +171,9 @@ public class RecyclerGridViewActivity  extends AppCompatActivity implements OnRe
             }
         });
 
-        //container.prepareForDragAndSwipe(true,true);
+        //recycle.prepareForDragAndSwipe(true,true);
 
-        container.setOnShowTopListener(new PowerfulRecyclerView.OnShowTopListener() {
+        recycle.setOnShowTopListener(new PowerfulRecyclerView.OnShowTopListener() {
             @Override
             public void showTop(boolean isShow) {
                 if (isShow) {
@@ -187,7 +187,7 @@ public class RecyclerGridViewActivity  extends AppCompatActivity implements OnRe
         returnToTop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                container.returnToTop();
+                recycle.returnToTop();
             }
         });
     }
