@@ -66,8 +66,6 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
 
     private int positionToRestore = 0;
 
-    private List<Boolean> showLogic = new ArrayList<Boolean>();
-
     private Handler mHandler = new Handler(){
 
         @Override
@@ -167,14 +165,11 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
         recycler.setOnItemClickListener(new PowerfulRecyclerView.OnItemClickListener() {
             @Override
             public void onItemClick(RecyclerView parent, RecyclerView.ViewHolder holder, int position) {
-                Log.d(TAG, "onItemClick: " + position);
                 if (position == 0) {
                     datas.add(1, R.mipmap.ic_launcher);
-                    showLogic.add(1,false);
                     adapter.notifyItemInserted(1);
                 } else if (position == 1) {
                     datas.remove(1);
-                    showLogic.remove(1);
                     adapter.notifyItemRemoved(1);
                 }
             }
@@ -237,8 +232,6 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
 
         if(msg == 0){
             datas.clear();
-
-            showLogic.clear();
         }
 
         datas.add(R.drawable.img1);
@@ -250,10 +243,6 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
         datas.add(R.drawable.img7);
         datas.add(R.drawable.img8);
         datas.add(R.drawable.img9);
-
-        for(int i = 0;i < 9;i++){
-            showLogic.add(false);
-        }
     }
 
     @Override
@@ -339,11 +328,6 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
         public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
             if(holder instanceof MyViewHolder){
                 ((MyViewHolder) holder).setImage(datas.get(position));
-                if(showLogic.get(position)){
-                    ((MyViewHolder) holder).android.setVisibility(View.VISIBLE);
-                }else{
-                    ((MyViewHolder) holder).android.setVisibility(View.INVISIBLE);
-                }
             }
         }
 
@@ -358,7 +342,6 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
                 return;
             }
             Collections.swap(datas, fromPosition, toPosition);
-            Collections.swap(showLogic,fromPosition,toPosition);
             notifyItemMoved(fromPosition, toPosition);
         }
 
@@ -368,7 +351,6 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
                 return;
             }
             datas.remove(position);
-            showLogic.remove(position);
             notifyItemRemoved(position);
         }
 

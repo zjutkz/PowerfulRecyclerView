@@ -26,12 +26,10 @@ public class PowerfulRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
     private List<View> mHeaderViews;
     private View mFootView;
     private RecyclerView.Adapter mPlugAdapter;
-    private OnViewClick parent;
     private int spanCount;
     private int headerPosition = 0;
 
-    public PowerfulRecyclerAdapter(OnViewClick parent,final RecyclerView.Adapter mPlugAdapter){
-        this.parent = parent;
+    public PowerfulRecyclerAdapter(final RecyclerView.Adapter mPlugAdapter){
         this.mPlugAdapter = mPlugAdapter;
 
         mHeaderViews = new ArrayList<View>();

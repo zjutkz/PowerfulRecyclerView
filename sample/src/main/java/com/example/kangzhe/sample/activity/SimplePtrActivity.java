@@ -39,7 +39,7 @@ import java.util.List;
  */
 public class SimplePtrActivity extends AppCompatActivity implements OnRefreshListener,OnLoadMoreListener {
 
-    private PowerfulSimpleRecyclerView container;
+    private PowerfulSimpleRecyclerView recycler;
 
     private ImageView returnToTop;
 
@@ -70,11 +70,11 @@ public class SimplePtrActivity extends AppCompatActivity implements OnRefreshLis
 
                 loadMoreCount = 0;
 
-                //container.setRefreshing(false);
-                container.stopRefresh();
+                //recycler.setRefreshing(false);
+                recycler.stopRefresh();
 
-                if(!container.isLoadMoreEnable()){
-                    container.setLoadMoreEnable(true);
+                if(!recycler.isLoadMoreEnable()){
+                    recycler.setLoadMoreEnable(true);
                 }
             }else if(msg.what == 1){
 
@@ -82,9 +82,9 @@ public class SimplePtrActivity extends AppCompatActivity implements OnRefreshLis
 
                 recyclerAdapter.notifyDataSetChanged();
 
-                container.stopLoadMore();
+                recycler.stopLoadMore();
             }else if(msg.what == 2){
-                container.setLoadMoreEnable(false);
+                recycler.setLoadMoreEnable(false);
             }
         }
     };
@@ -94,24 +94,24 @@ public class SimplePtrActivity extends AppCompatActivity implements OnRefreshLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.simple_ptr_activity);
 
-        container = (PowerfulSimpleRecyclerView)findViewById(R.id.ptr_container);
+        recycler = (PowerfulSimpleRecyclerView)findViewById(R.id.ptr_container);
 
         returnToTop = (ImageView)findViewById(R.id.btn_return_to_top);
 
-        //container.setHeaderStrings(headerStrings).setHeaderDrawables(headerDrawables);
+        //recycler.setHeaderStrings(headerStrings).setHeaderDrawables(headerDrawables);
 
-        //container.setFooterView(footer);
+        //recycler.setFooterView(footer);
 
         getDatas(1);
 
         recyclerAdapter = new MyRecyclerAdapter();
 
-        //container.setListAdapter(adapter);
-        container.setLayoutManager(new LinearLayoutManager(SimplePtrActivity.this));
+        //recycler.setListAdapter(adapter);
+        recycler.setLayoutManager(new LinearLayoutManager(SimplePtrActivity.this));
 
-        //container.addItemDecoration(new DividerItemDecoration(SimplePtrActivity.this, DividerItemDecoration.VERTICAL_LIST));
+        //recycler.addItemDecoration(new DividerItemDecoration(SimplePtrActivity.this, DividerItemDecoration.VERTICAL_LIST));
 
-        container.setAdapter(recyclerAdapter);
+        recycler.setAdapter(recyclerAdapter);
 
         listHeader = (LinearLayout)LayoutInflater.from(this).inflate(R.layout.list_header_viewpager, null);
 
@@ -126,15 +126,15 @@ public class SimplePtrActivity extends AppCompatActivity implements OnRefreshLis
 
         vp.setAdapter(pagerAdapter);
 
-        container.setPositionToShowBtn(4);
+        recycler.setPositionToShowBtn(4);
 
-        container.addRecyclerViewHeader(listHeader);
+        recycler.addRecyclerViewHeader(listHeader);
 
-        container.setOnRefreshListener(this);
+        recycler.setOnRefreshListener(this);
 
-        container.setOnLoadMoreListener(this);
+        recycler.setOnLoadMoreListener(this);
 
-        container.setOnItemClickListener(new PowerfulSimpleRecyclerView.OnItemClickListener() {
+        recycler.setOnItemClickListener(new PowerfulSimpleRecyclerView.OnItemClickListener() {
             @Override
             public void onItemClick(RecyclerView parent, RecyclerView.ViewHolder holder, int position) {
                 if(holder.getItemViewType() == PowerfulRecyclerView.TYPE_RECYCLER_FOOTER){
@@ -144,7 +144,7 @@ public class SimplePtrActivity extends AppCompatActivity implements OnRefreshLis
             }
         });
 
-        container.setOnItemLongClickListener(new PowerfulRecyclerView.OnItemLongClickListener() {
+        recycler.setOnItemLongClickListener(new PowerfulRecyclerView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(RecyclerView parent, RecyclerView.ViewHolder holder, int position) {
                 Toast.makeText(SimplePtrActivity.this, "long click" + position, Toast.LENGTH_SHORT).show();
@@ -152,7 +152,7 @@ public class SimplePtrActivity extends AppCompatActivity implements OnRefreshLis
             }
         });
 
-        container.setOnShowTopListener(new PowerfulSimpleRecyclerView.OnShowTopListener() {
+        recycler.setOnShowTopListener(new PowerfulSimpleRecyclerView.OnShowTopListener() {
             @Override
             public void showTop(boolean isShow) {
                 if (isShow) {
@@ -166,7 +166,7 @@ public class SimplePtrActivity extends AppCompatActivity implements OnRefreshLis
         returnToTop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                container.returnToTop();
+                recycler.returnToTop();
             }
         });
     }
@@ -316,12 +316,10 @@ public class SimplePtrActivity extends AppCompatActivity implements OnRefreshLis
         public class MyViewHolder extends RecyclerView.ViewHolder{
 
             private ImageView iv;
-            private LinearLayout itemContainer;
 
             public MyViewHolder(View itemView) {
                 super(itemView);
 
-                itemContainer = (LinearLayout)itemView.findViewById(R.id.item_container);
                 iv = (ImageView)itemView.findViewById(R.id.item_iv);
             }
         }

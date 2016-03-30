@@ -17,6 +17,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -183,7 +184,7 @@ public class PowerfulRecyclerView extends LinearLayout implements OnViewClick,Sw
     protected NestedScrollingChildHelper mNestedScrollingChildHelper;
 
     /**
-     * recyclerView在y坐标上未消费的总距离
+     * recyclerView在坐标上未消费的总距离
      */
     protected float mTotalUnconsumed;
 
@@ -865,7 +866,7 @@ public class PowerfulRecyclerView extends LinearLayout implements OnViewClick,Sw
     public void setAdapter(RecyclerView.Adapter adapter){
 
         if(mPowerfulRecyclerAdapter == null){
-            mPowerfulRecyclerAdapter = new PowerfulRecyclerAdapter(this,adapter);
+            mPowerfulRecyclerAdapter = new PowerfulRecyclerAdapter(adapter);
         }
 
         if(mRecyclerView != null){

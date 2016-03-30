@@ -59,12 +59,12 @@ public class ItemTouchListenerAdapter extends GestureDetector.SimpleOnGestureLis
 
         int position = recyclerView.getChildAdapterPosition(view);
 
+        RecyclerView.ViewHolder holder = getViewHolderUnder(position);
+
         RecyclerView.Adapter mAdapter = recyclerView.getAdapter();
         if(mAdapter instanceof PowerfulRecyclerAdapter){
             position -= ((PowerfulRecyclerAdapter) mAdapter).getHeaderViewCount();
         }
-
-        RecyclerView.ViewHolder holder = getViewHolderUnder(position);
 
         if(position < 0){
             return false;
