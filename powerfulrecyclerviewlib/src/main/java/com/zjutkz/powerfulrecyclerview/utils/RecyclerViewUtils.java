@@ -6,6 +6,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -72,7 +73,7 @@ public class RecyclerViewUtils {
             } else if (action == MotionEvent.ACTION_CANCEL || action == MotionEvent.ACTION_UP) {
                 // TODO: 16/2/3 If we do not judge it,when we slide the banner,it will receive the
                 // TODO: 16/2/3 click event,anyone has a better way to fix this issue?
-                if(moveCount < MIN_MOVE_COUNT){
+                if(moveCount < MIN_MOVE_COUNT && shouldIntercept){
                     recyclerViewHeader.dispatchTouchEvent(event);
                 }
 
