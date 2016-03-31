@@ -70,6 +70,8 @@ public class RecyclerViewUtils {
                 checkHitArea(recyclerViewHeader,event,index);
                 //下拉的时候由于不会intercept，所以会进这些判断。所以要判断moveCount，不然会出发点击事件。
             } else if (action == MotionEvent.ACTION_CANCEL || action == MotionEvent.ACTION_UP) {
+                // TODO: 16/2/3 If we do not judge it,when we slide the banner,it will receive the
+                // TODO: 16/2/3 click event,anyone has a better way to fix this issue?
                 if(moveCount < MIN_MOVE_COUNT){
                     recyclerViewHeader.dispatchTouchEvent(event);
                 }
