@@ -26,7 +26,7 @@ you can see the usage [on my blog](http://zjutkz.net/2016/03/29/重复造轮子�
 
 ###Notice
 
-There are some bugs with  'com.android.support:recyclerview-v7:23.2.0' and higher,especially when you adding or removing items.So please use lower version of recycierview,I will try my best to fix bugs.
+~~There are some bugs with  'com.android.support:recyclerview-v7:23.2.0' and higher,especially when you adding or removing items.So please use lower version of recycierview,I will try my best to fix bugs.~~
 
 
 
