@@ -50,7 +50,6 @@ public class PowerfulRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                 int truePositionStart = positionStart + getHeaderViewCount();
 
                 PowerfulRecyclerAdapter.this.notifyItemRangeInserted(truePositionStart, itemCount);
-                PowerfulRecyclerAdapter.this.notifyItemRangeChanged(truePositionStart,mPlugAdapter.getItemCount() - truePositionStart);
             }
 
             @Override
@@ -58,7 +57,6 @@ public class PowerfulRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                 int truePositionStart = positionStart + getHeaderViewCount();
 
                 PowerfulRecyclerAdapter.this.notifyItemRangeRemoved(truePositionStart, itemCount);
-                PowerfulRecyclerAdapter.this.notifyItemRangeChanged(truePositionStart, mPlugAdapter.getItemCount() - truePositionStart);
             }
 
             @Override
@@ -67,7 +65,6 @@ public class PowerfulRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                 int truePositionEnd = toPosition + getHeaderViewCount();
 
                 PowerfulRecyclerAdapter.this.notifyItemMoved(truePositionStart, truePositionEnd);
-                PowerfulRecyclerAdapter.this.notifyItemRangeChanged(Math.min(truePositionStart, truePositionEnd), Math.abs(truePositionStart - truePositionEnd) + 1);
             }
         });
     }

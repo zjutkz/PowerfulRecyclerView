@@ -172,6 +172,7 @@ public class RecyclerListViewActivity extends AppCompatActivity implements OnRef
                     datas.remove(1);
                     adapter.notifyItemRemoved(1);
                 }
+                Log.d(TAG, "onItemClick: " + position);
             }
         });
 

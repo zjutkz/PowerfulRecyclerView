@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/exploded-aar/PowerfulRecyclerView/powerfulrecyclerviewlib/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="fd65a3c27e0b45691f71efbbbb6666d1bcb2fccd">
+        <dex dex="/Users/kangzhe/PowerfulRecyclerView/sample/build/intermediates/pre-dexed/debug/PowerfulRecyclerView-powerfulrecyclerviewlib-unspecified_decdef5edc414d881fce1fc0e9cb0e8eac2ff257.jar" />
+    </item>
+
+</items>

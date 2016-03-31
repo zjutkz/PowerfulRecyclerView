@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPropertyAnimatorCompat;
 import android.support.v4.view.ViewPropertyAnimatorListener;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SimpleItemAnimator;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
@@ -26,7 +27,7 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator {
 
     private ArrayList<RecyclerView.ViewHolder> mPendingAdditions = new ArrayList<>();
     private ArrayList<RecyclerView.ViewHolder> mPendingRemoves = new ArrayList<>();
-    private ArrayList<moveInfo> mPendingChanges = new ArrayList<>();
+    private ArrayList<moveInfo> mPendingMoves = new ArrayList<>();
 
     private long totalTime = 0;
 
@@ -49,17 +50,6 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator {
         }
     }
 
-    // fix bug
-    // 由于recyclerView源码中的逻辑为invisible的item不论怎么样都不会notify(就算notifyItemRangeChanged(0,count))
-    // 所以这里要强制执行notifyDataSetChanged()方法
-    private Runnable mNotifyRunnable = new Runnable() {
-        @Override
-        public void run() {
-            mAdapter.notifyDataSetChanged();
-            totalTime = 0;
-        }
-    };
-
     public static Handler postHandler = new Handler();
 
     public BaseItemAnimator() {
@@ -77,7 +67,7 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator {
     @Override
     public void runPendingAnimations() {
         boolean shouldRemove = !mPendingRemoves.isEmpty();
-        boolean shouldChange = !mPendingChanges.isEmpty();
+        boolean shouldChange = !mPendingMoves.isEmpty();
         boolean shouldAdd = !mPendingAdditions.isEmpty();
 
         //判断remove的逻辑
@@ -110,7 +100,7 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator {
         }
 
         //判断add的逻辑
-        if(shouldAdd){
+        if(shouldAdd) {
             Runnable addPadding = new Runnable() {
                 @Override
                 public void run() {
@@ -118,17 +108,12 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator {
                 }
             };
 
-            if(shouldRemove || shouldChange){
-                postHandler.postDelayed(addPadding,totalTime);
-            }else{
+            if (shouldRemove || shouldChange) {
+                postHandler.postDelayed(addPadding, totalTime);
+            } else {
                 addPadding.run();
             }
             totalTime += getAddDuration();
-        }
-
-        if(shouldNotify){
-            Handler h = new Handler();
-            h.postDelayed(mNotifyRunnable,totalTime);
         }
     }
 
@@ -159,22 +144,14 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator {
      */
     @Override
     public boolean animateMove(RecyclerView.ViewHolder holder, int fromX, int fromY, int toX, int toY) {
-        return true;
-    }
-
-    /**
-     * adapter调用notifyItemChanged会回调到这个方法
-     */
-    @Override
-    public boolean animateChange(RecyclerView.ViewHolder oldHolder, RecyclerView.ViewHolder newHolder, int fromX, int fromY, int toX, int toY) {
-        final View view = oldHolder.itemView;
-        fromX += ViewCompat.getTranslationX(oldHolder.itemView);
-        fromY += ViewCompat.getTranslationY(oldHolder.itemView);
-        endAnimation(oldHolder);
+        final View view = holder.itemView;
+        fromX += ViewCompat.getTranslationX(holder.itemView);
+        fromY += ViewCompat.getTranslationY(holder.itemView);
+        endAnimation(holder);
         int deltaX = toX - fromX;
         int deltaY = toY - fromY;
         if (deltaX == 0 && deltaY == 0) {
-            dispatchMoveFinished(oldHolder);
+            dispatchMoveFinished(holder);
             return false;
         }
         if (deltaX != 0) {
@@ -183,7 +160,16 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator {
         if (deltaY != 0) {
             ViewCompat.setTranslationY(view, -deltaY);
         }
-        mPendingChanges.add(new moveInfo(oldHolder, fromX, fromY, toX, toY));
+        mPendingMoves.add(new moveInfo(holder, fromX, fromY, toX, toY));
+
+        return true;
+    }
+
+    /**
+     * adapter调用notifyItemChanged会回调到这个方法
+     */
+    @Override
+    public boolean animateChange(RecyclerView.ViewHolder oldHolder, RecyclerView.ViewHolder newHolder, int fromX, int fromY, int toX, int toY) {
 
         return true;
     }
@@ -201,7 +187,7 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator {
             dispatchRemoveFinished(item);
         }
 
-        if(mPendingChanges.remove(item)){
+        if(mPendingMoves.remove(item)){
             AnimateViewUtils.clear(item.itemView);
             dispatchMoveFinished(item);
         }
@@ -216,15 +202,15 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator {
 
     @Override
     public void endAnimations() {
-        int count = mPendingChanges.size();
+        int count = mPendingMoves.size();
 
         for (int i = count - 1; i >= 0; i--) {
-            moveInfo item = mPendingChanges.get(i);
+            moveInfo item = mPendingMoves.get(i);
             View view = item.holder.itemView;
             ViewCompat.setTranslationY(view, 0);
             ViewCompat.setTranslationX(view, 0);
             dispatchMoveFinished(item.holder);
-            mPendingChanges.remove(i);
+            mPendingMoves.remove(i);
         }
 
         count = mPendingRemoves.size();
@@ -245,7 +231,7 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator {
 
     @Override
     public boolean isRunning() {
-        return !mPendingAdditions.isEmpty() || !mPendingRemoves.isEmpty() || !mPendingChanges.isEmpty();
+        return !mPendingAdditions.isEmpty() || !mPendingRemoves.isEmpty() || !mPendingMoves.isEmpty();
     }
 
     private void preAnimateRemove(RecyclerView.ViewHolder holder) {
@@ -271,7 +257,7 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator {
     }
 
     private void doChangeAnimate() {
-        for(final moveInfo info : mPendingChanges){
+        for(final moveInfo info : mPendingMoves){
             final RecyclerView.ViewHolder holder = info.holder;
             int fromX = info.fromX;
             int fromY = info.fromY;
@@ -316,7 +302,7 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator {
             }).start();
         }
 
-        mPendingChanges.clear();
+        mPendingMoves.clear();
     }
 
     private void doAddAnimate() {
