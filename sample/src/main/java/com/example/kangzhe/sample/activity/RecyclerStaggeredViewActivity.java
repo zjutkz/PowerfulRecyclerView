@@ -1,5 +1,7 @@
 package com.example.kangzhe.sample.activity;
 
+import android.app.ActionBar;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -14,6 +16,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -257,23 +260,6 @@ public class RecyclerStaggeredViewActivity extends AppCompatActivity implements 
         public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
 
             if(holder instanceof MyViewHolder){
-                /*ImageFetcher.fetchImage(datas.get(position), new WdImageFetchListener() {
-                    @Override
-                    public void onFetchSuccess(String uri, Bitmap bitmap) {
-                        ((MyViewHolder) holder).iv.setOriginalSize(bitmap.getWidth(),bitmap.getHeight());
-                        ((MyViewHolder) holder).iv.setImageBitmap(bitmap);
-                    }
-
-                    @Override
-                    public void onFetchFailed(String uri) {
-
-                    }
-
-                    @Override
-                    public void onCanceled(String uri) {
-
-                    }
-                });*/
                 int max=500;
                 int min=700;
                 Random random = new Random();
@@ -282,9 +268,11 @@ public class RecyclerStaggeredViewActivity extends AppCompatActivity implements 
 
                 ViewGroup.LayoutParams params = ((MyViewHolder) holder).iv.getLayoutParams();
                 params.height = height;
+
                 ((MyViewHolder) holder).iv.setLayoutParams(params);
+
                 Picasso.with(((MyViewHolder) holder).iv.getContext()).
-                        load(datas.get(position)).
+                        load(datas.get(position)).fit().
                         into(((MyViewHolder) holder).iv);
             }
         }

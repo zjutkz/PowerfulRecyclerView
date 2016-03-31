@@ -18,14 +18,13 @@
     android:id="@+id/staggered_item_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:wdimage="http://schemas.android.com/tools"
     android:layout_margin="2dp"
+    xmlns:wdimage="http://schemas.android.com/tools"
     android:foreground="?selectableItemBackground">
 
     <ImageView
         android:id="@+id/staggered_item_iv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        wdimage:actualImageScaleType="centerCrop"  />
+        android:layout_height="match_parent"/>
 
 </FrameLayout>
