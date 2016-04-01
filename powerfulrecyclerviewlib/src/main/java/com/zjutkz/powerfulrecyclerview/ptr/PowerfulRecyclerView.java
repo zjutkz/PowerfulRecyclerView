@@ -922,7 +922,6 @@ public class PowerfulRecyclerView extends LinearLayout implements OnViewClick,Sw
     public void setItemAnimator(RecyclerView.ItemAnimator mAnimator){
         if(mAnimator  instanceof BaseItemAnimator && mRecyclerView != null){
             mRecyclerView.setItemAnimator(mAnimator);
-            ((BaseItemAnimator) mAnimator).setAdapter(mRecyclerView.getAdapter());
         }
     }
 

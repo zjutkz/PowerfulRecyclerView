@@ -31,10 +31,6 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator {
 
     private long totalTime = 0;
 
-    private boolean shouldNotify = false;
-
-    private RecyclerView.Adapter mAdapter;
-
     protected Interpolator mInterpolator = new LinearInterpolator();
 
     private static class moveInfo {
@@ -72,7 +68,6 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator {
 
         //判断remove的逻辑
         if(shouldRemove){
-            shouldNotify = true;
             doRemoveAnimate();
             totalTime = getRemoveDuration();
         }
@@ -319,15 +314,10 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator {
     }
 
     private void dispatchFinishedWhenDone() {
-        shouldNotify = false;
 
         if (!isRunning()) {
             dispatchAnimationsFinished();
         }
-    }
-
-    public void setAdapter(RecyclerView.Adapter mAdapter){
-        this.mAdapter = mAdapter;
     }
 
     /**

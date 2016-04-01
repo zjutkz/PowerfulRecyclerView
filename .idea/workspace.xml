@@ -10,13 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c966cd7-2783-4cde-a953-e9d0d88ba826" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/touchHelper/ItemTouchListenerAdapter.java" afterPath="$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/touchHelper/ItemTouchListenerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/utils/RecyclerViewUtils.java" afterPath="$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/utils/RecyclerViewUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/animator/base/BaseItemAnimator.java" afterPath="$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/animator/base/BaseItemAnimator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/ptr/PowerfulRecyclerView.java" afterPath="$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/ptr/PowerfulRecyclerView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -48,11 +43,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RecyclerViewUtils.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RecyclerViewUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/utils/RecyclerViewUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38319328">
-              <caret line="75" column="45" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="64" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="76" column="53" selection-start-line="76" selection-start-column="53" selection-end-line="76" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -72,9 +67,22 @@
         <entry file="file://$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/ptr/PowerfulRecyclerView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="889" column="57" selection-start-line="889" selection-start-column="57" selection-end-line="889" selection-end-column="57" />
+              <caret line="923" column="53" selection-start-line="923" selection-start-column="53" selection-end-line="923" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseItemAnimator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/animator/base/BaseItemAnimator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.29457974">
+              <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+              <folding>
+                <element signature="e#1749#1750#0" expanded="true" />
+                <element signature="e#1799#1800#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2717,7 +2725,6 @@
         <option value="$PROJECT_DIR$/sample/src/main/res/layout/recycler_activity.xml" />
         <option value="$PROJECT_DIR$/sample/src/main/java/com/example/kangzhe/sample/activity/RecyclerGridViewActivity.java" />
         <option value="$PROJECT_DIR$/sample/src/main/java/com/example/kangzhe/sample/activity/SimplePtrActivity.java" />
-        <option value="$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/ptr/PowerfulRecyclerView.java" />
         <option value="$PROJECT_DIR$/sample/build.gradle" />
         <option value="$PROJECT_DIR$/sample/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/sample/src/main/res/layout/staggered_item.xml" />
@@ -2726,9 +2733,10 @@
         <option value="$PROJECT_DIR$/powerfulrecyclerviewlib/build.gradle" />
         <option value="$PROJECT_DIR$/sample/src/main/java/com/example/kangzhe/sample/activity/RecyclerListViewActivity.java" />
         <option value="$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/adapter/PowerfulRecyclerAdapter.java" />
-        <option value="$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/animator/base/BaseItemAnimator.java" />
         <option value="$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/touchHelper/ItemTouchListenerAdapter.java" />
         <option value="$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/utils/RecyclerViewUtils.java" />
+        <option value="$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/ptr/PowerfulRecyclerView.java" />
+        <option value="$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/animator/base/BaseItemAnimator.java" />
       </list>
     </option>
   </component>
@@ -2743,9 +2751,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="1280" />
     <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="739" />
+    <option name="width" value="2560" />
+    <option name="height" value="1417" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -3060,6 +3069,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="animator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3420,8 +3433,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="739" extended-state="0" />
-    <editor active="true" />
+    <frame x="1280" y="23" width="2560" height="1417" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3443,7 +3456,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27382874" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13463067" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -3571,13 +3584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11783189">
           <caret line="10" column="1" selection-start-line="5" selection-start-column="0" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/animator/impl/FadeInAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6009427">
-          <caret line="57" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -3858,14 +3864,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="6707" column="32" selection-start-line="6707" selection-start-column="29" selection-end-line="6707" selection-end-column="36" />
           <folding>
-            <element signature="e#26495#26496#0" expanded="true" />
-            <element signature="e#26570#26571#0" expanded="true" />
-            <element signature="e#287365#287366#0" expanded="true" />
-            <element signature="e#287419#287420#0" expanded="true" />
-            <element signature="e#287759#287760#0" expanded="true" />
-            <element signature="e#287801#287802#0" expanded="true" />
-            <element signature="e#288198#288199#0" expanded="true" />
-            <element signature="e#288253#288254#0" expanded="true" />
+            <element signature="e#26495#26496#0" expanded="false" />
+            <element signature="e#26570#26571#0" expanded="false" />
+            <element signature="e#287365#287366#0" expanded="false" />
+            <element signature="e#287419#287420#0" expanded="false" />
+            <element signature="e#287759#287760#0" expanded="false" />
+            <element signature="e#287801#287802#0" expanded="false" />
+            <element signature="e#288198#288199#0" expanded="false" />
+            <element signature="e#288253#288254#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3897,24 +3903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/animator/base/BaseItemAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.25167784">
-          <caret line="304" column="23" selection-start-line="304" selection-start-column="23" selection-end-line="304" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/ptr/PowerfulRecyclerView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="889" column="57" selection-start-line="889" selection-start-column="57" selection-end-line="889" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sample/src/main/java/com/example/kangzhe/sample/activity/RecyclerListViewActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3933,9 +3921,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/utils/RecyclerViewUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38319328">
-          <caret line="75" column="45" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="53" selection-start-line="76" selection-start-column="53" selection-end-line="76" selection-end-column="53" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/ptr/PowerfulRecyclerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="923" column="53" selection-start-line="923" selection-start-column="53" selection-end-line="923" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/animator/impl/FadeInAnimator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24744697">
+          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/powerfulrecyclerviewlib/src/main/java/com/zjutkz/powerfulrecyclerview/animator/base/BaseItemAnimator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29457974">
+          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+          <folding>
+            <element signature="e#1749#1750#0" expanded="true" />
+            <element signature="e#1799#1800#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
