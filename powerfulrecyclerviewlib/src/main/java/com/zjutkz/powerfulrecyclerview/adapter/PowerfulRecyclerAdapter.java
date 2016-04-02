@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.zjutkz.powerfulrecyclerview.listener.ItemTouchAdapter;
-import com.zjutkz.powerfulrecyclerview.listener.OnViewClick;
 
 import java.util.ArrayList;
 import java.util.List;

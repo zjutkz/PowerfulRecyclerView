@@ -1,0 +1,107 @@
+group = "com.zjutkz"
+version = "1.0.0"
+project.archivesBaseName = "PowerfulRecyclerView"
+
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += configurations.compile
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+javadoc {
+    options{
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        links "http://docs.oracle.com/javase/7/docs/api"
+        title "PowerfulRecyclerView"
+    }
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+def pomConfig = {
+    licenses {
+        license {
+            name "The Apache Software License, Version 2.0"
+            url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            distribution "repo"
+        }
+    }
+    developers {
+        developer {
+            id "zjutkz"
+            name "zjutkz"
+            email "568255592@qq.com"
+        }
+    }
+    //这里有引号，并且有个空格，否则生成不了依赖，主要是这里的dependencies并不是build.gradle里的dependencies，而gradle会把他当成自身的dependencies处理
+    "dependencies " {
+        dependency{
+            groupId "com.android.support"
+            artifactId "recyclerview-v7"
+            "version " "23.2.0"
+            //同dependencies
+        }
+    }
+
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId "PowerfulRecyclerView"
+
+            pom{
+                packaging 'aar'
+            }
+            pom.withXml {
+                def root = asNode()
+                root.appendNode('description', "A powerful and useful RecyclerView")
+                root.children().last() + pomConfig
+            }
+        }
+    }
+}
+
+bintray {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    user = properties.getProperty('BINTRAY_USER');
+    key = properties.getProperty('BINTRAY_KEY');
+
+
+
+    configurations = ['archives']
+    publications = ['mavenJava']
+    publish = true
+
+    pkg {
+        repo = 'maven'
+        name = "PowerfulRecyclerView"
+        desc = "A powerful and useful RecyclerView"
+        websiteUrl = "https://github.com/zjutkz/PowerfulRecyclerView"
+        issueTrackerUrl = "https://github.com/zjutkz/PowerfulRecyclerView/issues"
+        vcsUrl = "https://github.com/zjutkz"
+        licenses = ['Apache-2.0']
+        publicDownloadNumbers = true
+    }
+}
