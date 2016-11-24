@@ -91,6 +91,9 @@ public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback {
 
     @Override
     public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+        if(viewHolder.getAdapterPosition() < 0){
+            return;
+        }
         boolean clickHeader = ((PowerfulRecyclerAdapter) mAdapter).hasHeaderView() && viewHolder.getAdapterPosition() == 0;
         boolean clickFooter = ((PowerfulRecyclerAdapter) mAdapter).hasFootView() && viewHolder.getAdapterPosition() == ((PowerfulRecyclerAdapter)mAdapter).getItemCount() - 1;
         boolean clickRecyclerFooter = ((PowerfulRecyclerAdapter) mAdapter).getPlugAdapter().getItemViewType(viewHolder.getAdapterPosition() - ((PowerfulRecyclerAdapter) mAdapter).getHeaderViewCount()) == PowerfulRecyclerView.TYPE_RECYCLER_FOOTER;
